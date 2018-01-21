@@ -46,7 +46,6 @@ public class PdfParserAsync extends AsyncTask<String,Void,List<CommissionEntity>
             int pages = document.getNumberOfPages();
 
             stripper.setStartPage(2);
-            //stripper.setEndPage(2);
             stripper.setEndPage(pages);
 
             String text = stripper.getText(document);
