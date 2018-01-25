@@ -3,6 +3,7 @@ package com.monodeepdas112.commissionbillreader.Utils;
 import android.content.Context;
 import android.os.AsyncTask;
 
+import com.monodeepdas112.commissionbillreader.Models.CommissionEntity;
 import com.tom_roush.pdfbox.pdmodel.PDDocument;
 import com.tom_roush.pdfbox.text.PDFTextStripper;
 import com.tom_roush.pdfbox.util.PDFBoxResourceLoader;
@@ -25,7 +26,6 @@ public class PdfParserAsync extends AsyncTask<String,Void,List<CommissionEntity>
     public interface ParserResponse{
         void populateRecyclerAdapter(List<CommissionEntity> entities);
     }
-
 
     public PdfParserAsync(Context context){
         PDFBoxResourceLoader.init(context);
@@ -73,7 +73,7 @@ public class PdfParserAsync extends AsyncTask<String,Void,List<CommissionEntity>
         while (sc.hasNextLine()){
             s=sc.nextLine();
             entity=new CommissionEntity(s);
-            if(entity.getCommision()!=null)
+            if(entity.getCommission()!=null)
                 commissionEntityList.add(entity);
         }
         return commissionEntityList;

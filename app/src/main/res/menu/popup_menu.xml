@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/sort_premium_asc"
-        android:title="Sort Premium Ascending order"
+        android:title="Arrange Premium Ascending order"
         app:showAsAction="never"/>
     <item android:id="@+id/sort_premium_dsc"
-        android:title="Sort Premium Descending order"
+        android:title="Arrange Premium Descending order"
         app:showAsAction="never"/>
     <item android:id="@+id/sort_com_asc"
-        android:title="Sort Commission Ascending Order"
+        android:title="Arrange Commission Ascending Order"
         app:showAsAction="never"/>
     <item android:id="@+id/sort_com_dsc"
-        android:title="Sort Commission Descending Order"
+        android:title="Arrange Commission Descending Order"
         app:showAsAction="never"/>
 </menu>

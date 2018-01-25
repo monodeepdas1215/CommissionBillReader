@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.monodeepdas112.commissionbillreader.R;
-import com.monodeepdas112.commissionbillreader.Utils.CommissionEntity;
+import com.monodeepdas112.commissionbillreader.Models.CommissionEntity;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -62,7 +62,7 @@ public class CommisionListAdapter extends RecyclerView.Adapter<CommisionListAdap
             holder.name.setText("Name : "+list.get(position).getName());
         else holder.name.setText("Name : Unknown");
         holder.prem.setText("Premium : Rs "+list.get(position).getPremium().toString());
-        holder.commission.setText("Commission : Rs "+list.get(position).getCommision().toString());
+        holder.commission.setText("Commission : Rs "+list.get(position).getCommission().toString());
         holder.dueDate.setText("Due Date : "+list.get(position).getPremDueDate());
     }
 
@@ -90,22 +90,20 @@ public class CommisionListAdapter extends RecyclerView.Adapter<CommisionListAdap
                     }
                 });
             }
-
-
         }else {
             //COMMISSION sort
             if (sortOrder==ASCENDING){
                 Collections.sort(list, new Comparator<CommissionEntity>() {
                     @Override
                     public int compare(CommissionEntity o1, CommissionEntity o2) {
-                        return Double.compare(o1.getCommision(), o2.getCommision());
+                        return Double.compare(o1.getCommission(), o2.getCommission());
                     }
                 });
             }else {
                 Collections.sort(list, new Comparator<CommissionEntity>() {
                     @Override
                     public int compare(CommissionEntity o1, CommissionEntity o2) {
-                        return Double.compare(o2.getCommision(), o1.getCommision());
+                        return Double.compare(o2.getCommission(), o1.getCommission());
                     }
                 });
             }

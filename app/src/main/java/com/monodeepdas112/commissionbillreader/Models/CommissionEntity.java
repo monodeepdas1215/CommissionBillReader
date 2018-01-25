@@ -1,4 +1,4 @@
-package com.monodeepdas112.commissionbillreader.Utils;
+package com.monodeepdas112.commissionbillreader.Models;
 
 import java.util.StringTokenizer;
 
@@ -12,12 +12,11 @@ public class CommissionEntity
     private String cbo;
     private String adjustmentDate;
     private Double premium;
-    private Double commision;
+    private Double commission;
 
     public CommissionEntity(String line){
         StringTokenizer tokenizer=new StringTokenizer(line," ");
         int n=tokenizer.countTokens();
-
         try {
             if (n == 8) {
                 name = null;
@@ -28,7 +27,7 @@ public class CommissionEntity
                 cbo = tokenizer.nextToken();
                 adjustmentDate = tokenizer.nextToken();
                 premium = Double.valueOf(tokenizer.nextToken());
-                commision = Double.valueOf(tokenizer.nextToken());
+                commission = Double.valueOf(tokenizer.nextToken());
             } else if (n > 8) {
                 n = n - 8;
                 String x = "";
@@ -44,7 +43,7 @@ public class CommissionEntity
                 cbo = tokenizer.nextToken();
                 adjustmentDate = tokenizer.nextToken();
                 premium = Double.valueOf(tokenizer.nextToken());
-                commision = Double.valueOf(tokenizer.nextToken());
+                commission = Double.valueOf(tokenizer.nextToken());
             }
         }catch (Exception e){
             name=null;
@@ -55,7 +54,7 @@ public class CommissionEntity
             cbo=null;
             adjustmentDate=null;
             premium=null;
-            commision=null;
+            commission =null;
         }
     }
 
@@ -79,8 +78,8 @@ public class CommissionEntity
         return premium;
     }
 
-    public Double getCommision() {
-        return commision;
+    public Double getCommission() {
+        return commission;
     }
 
     public String getAdjustmentDate() {
@@ -99,6 +98,6 @@ public class CommissionEntity
     public String toString() {
         return new String("Name : "+name+"\nPolicy Number : "+policyNum+"\nPlan : "+plan
                 +"\nPremium Due Date : "+premDueDate+"\nRisk Date : "+riskDate+"\ncbo : "+cbo+"\nAdjDate : "+ adjustmentDate
-                +"\nPremium : Rs "+premium+"\nCommission : Rs "+commision);
+                +"\nPremium : Rs "+premium+"\nCommission : Rs "+ commission);
     }
 }

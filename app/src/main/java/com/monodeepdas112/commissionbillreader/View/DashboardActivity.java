@@ -26,7 +26,7 @@ import com.monodeepdas112.commissionbillreader.Adapters.CommisionListAdapter;
 import com.monodeepdas112.commissionbillreader.Utils.PathUtils;
 import com.monodeepdas112.commissionbillreader.Utils.PdfParserAsync;
 import com.monodeepdas112.commissionbillreader.R;
-import com.monodeepdas112.commissionbillreader.Utils.CommissionEntity;
+import com.monodeepdas112.commissionbillreader.Models.CommissionEntity;
 
 import java.util.List;
 
@@ -46,7 +46,6 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
 
     LinearLayout commissionList;
     RelativeLayout dashboard;
-
     RelativeLayout relativeLayout;
 
     @Override
@@ -83,7 +82,6 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         commissionList= (LinearLayout) findViewById(R.id.commission_list);
         dashboard.setVisibility(View.VISIBLE);
         commissionList.setVisibility(View.GONE);
-        //
         mToolbar= (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("Commission Bill Reader");
